@@ -10,4 +10,4 @@ class Config:
     SQLALCHEMY_DATABASE_URI = conf["SQLALCHEMY_DATABASE_URI"]
     SQLALCHEMY_ECHO = conf.get("SQLALCHEMY_ECHO")
     WTF_CSRF_SECRET_KEY = conf.get("WTF_CSRF_SECRET_KEY")
-    
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(os.path.abspath(os.path.dirname(__file__)), '..', 'data', 'mydatabase.db')
