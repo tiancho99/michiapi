@@ -1,7 +1,7 @@
 import os
 import json
 
-with open(os.path.abspath(f"{os.environ.get("MICHIAPI_CONFIG")}")) as config_file:
+with open(os.path.abspath(f"{os.environ.get('MICHIAPI_CONFIG')}")) as config_file:
     conf = json.load(config_file)
 
 class Config:

@@ -19,7 +19,4 @@ def create_app():
     limiter.init_app(app)
     bootstrap = Bootstrap5(app)
 
-
-
-
     return app

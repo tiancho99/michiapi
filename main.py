@@ -34,10 +34,10 @@ def about():
     return render_template("about.html")
 
 
-# @app.route("/populate")
-# def populate():
-#     db_manager.populate_tables()
-#     return "success"
+ @app.route("/populate")
+ def populate():
+     db_manager.populate_tables()
+     return "success"
 
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=8000, debug=True)
