@@ -1,0 +1,66 @@
+
+body {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: #212529;
+}
+
+hr {
+    border-color: white;
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, h7{
+    color: white;
+}
+
+
+.navbar .logo {
+    font-weight: bold;
+    color: #4AF626
+}
+
+.banner {
+    background-color: #212529;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+
+.banner .api_description {
+    font-size: 1rem;
+}
+
+.response .canvas {
+    height: 10rem;
+}
+
+.canvas-data {
+    min-height: 50vh;
+    max-height: 50vh;
+    /* overflow-y: scroll;
+    overflow-x: auto; */
+    background-color: white;
+    border-radius: 0.2rem;
+    border-color: black;
+    font-weight: bold;
+    color: #595c5f;
+    width: 100%;
+    height: 100%;
+}
+
+.white {
+    color: white;
+    /* margin: 2rem 0; */
+}
+
+.input-group-text {
+    /* color: #4AF626; */
+    color: white;
+}
+
+.footer {
+    color: white;
+    text-align: center;
+}

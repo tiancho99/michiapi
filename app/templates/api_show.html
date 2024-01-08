@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<hr>
+<div class="container pt-5 pb-3">
+    <div class="row">
+        <div class="col">
+            <h3>MichiAPI root</h3>
+        </div>
+    </div>
+    <hr class="mb-5">
+    <div class="row mb-2">
+        <div class="col">
+            <h6 class="">Endpoints:</h6>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col response">
+            <pre class="canvas-data overflow-auto" id="canvas-data">
+                {{- data -}}
+            </pre>
+        </div>
+    </div>
+    <hr class="mt-5">
+</div>
+    
+{% endblock content %}
+
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css')}}">
+{% endblock styles %}

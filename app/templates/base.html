@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {% block head %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
+
+
+    {% block styles %}
+    <!-- Bootstrap CSS -->
+    {{ bootstrap.load_css() }}
+    {% endblock styles %}
+
+    <title>{% block title %}Title{% endblock title %}</title>
+    {% endblock head %}
+</head>
+
+<body>
+    <!-- Your page content -->
+    {% block content %}
+    {% endblock content %}
+    {% block footer %}
+    <footer class="footer pt-3 pb-3 mt-auto">
+        <div class="container-fluid">
+            <p>&copy; {% block year %}{% endblock year%} Sebastian Hernandez. Made with love 💚.</p>
+        </div>
+    </footer>
+    {% endblock footer%}
+
+    {% block scripts %}
+    <!-- Optional JavaScript -->
+    {{ bootstrap.load_js() }}
+    {% endblock scripts%}
+</body>
+
+</html>
