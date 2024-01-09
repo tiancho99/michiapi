@@ -3,20 +3,23 @@ import os
 
 from .models import db, Michis, Doggos, Tags, michi_tag_m2m, doggo_tag_m2m
 
+
 def populate_tables():
-    files_path = ["michis", "doggos", "tags", "michi_tag_m2m", "doggo_tag_m2m"]
-    for file in files_path:
-        with open(f"instance/{file}.csv") as data_file:
+    print("HOLA")
+    files_names = ["michis.csv", "doggos.csv", "tags.csv", "michi_tag_m2m.csv", "doggo_tag_m2m.csv"]
+    for file in files_names:
+        file_path = os.path.abspath(os.path.join("data", file))
+        with open(file_path) as data_file:
             reader = list(csv.DictReader(data_file))
-        if file == "michis":
+        if file == "michis.csv":
             db.session.execute(db.insert(Michis).values(reader))
-        elif file == "doggos":
+        elif file == "doggos.csv":
             db.session.execute(db.insert(Doggos).values(reader))
-        elif file == "tags":
+        elif file == "tags.csv":
             db.session.execute(db.insert(Tags).values(reader))
-        elif file == "michi_tag_m2m":
+        elif file == "michi_tag_m2m.csv":
             db.session.execute(db.insert(michi_tag_m2m).values(reader))
-        elif file == "doggo_tag_m2m":
+        elif file == "doggo_tag_m2m.csv":
             db.session.execute(db.insert(doggo_tag_m2m).values(reader))
 
     db.session.commit()
