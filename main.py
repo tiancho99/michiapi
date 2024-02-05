@@ -16,13 +16,16 @@ def home():
     context = {
         "year": datetime.date.today().year,
         "data": response.get_data(as_text=True),
+        "endpoint": os.environ["MICHIAPI_ENDPOINT"],
     }
     return render_template("index.html", **context)
 
 @app.route("/documentation")
 def documentation():
-    endpoint = os.environ.get("MICHIAPI_ENDPOINT")
-    return render_template("documentation.html", endpoint=endpoint)
+    context = {
+        "endpoint": os.environ["MICHIAPI_ENDPOINT"],
+    }
+    return render_template("documentation.html", **context)
 
 @app.route("/about")
 def about():
