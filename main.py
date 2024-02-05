@@ -1,4 +1,4 @@
-from flask import render_template, request, url_for
+from flask import render_template, request, url_for, send_from_directory
 from app.utils.response import success_response, error_response
 import datetime
 
@@ -32,7 +32,12 @@ def documentation():
 def about():
     return render_template("about.html")
 
+@app.route("/images/<name>")
+def images(name):
+    print(url_for("static", filename="images")+f"/{name}")
+    return send_from_directory(app.config["UPLOAD_FOLDER"], name)
 
+           
 # @app.route("/populate")
 # def populate():
 #    db_manager.populate_tables()

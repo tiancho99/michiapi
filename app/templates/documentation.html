@@ -36,9 +36,11 @@
     <hr>
 
     <div class="endponints ms-3 white">
+        <h4 class="m-3">Location</h4>
+            <p class="m-3">The MichiAPI is available at http://michiapi.sebastiandev.com/api . Responses are sent as JSON but root /. 
         <h4 class="m-3">API Endpoints</h4>
         <ul>
-            <li><a href="{{ url_for('michiapi.api', format='json') }}">/api?format=json</a> - Get API endpoints</li>
+            <li><a href="{{ url_for('michiapi.api', format='json') }}">/</a> - Get API endpoints linst. you can pass format=json as parameter to get list as JSON</li>
             <li><a href="{{ url_for('michiapi.michis') }}">/michis</a> - Get a list of Michis</li>
             <li><a href="{{ url_for('michiapi.doggos') }}">/doggos</a> - Get a list of Doggos</li>
             <li><a href="{{ url_for('michiapi.tags') }}">/tags</a> - Get a list of Tags</li>
