@@ -31,17 +31,12 @@ def api():
 def michis():
     try:
         format = request.args.get("format")
-        michi_list = db_manager.michi_list()
-        response = []
-        for michi in michi_list:
-            serialized_michi = michi.serialize()
-            michi_tag_list = db_manager.michi_tags_list(serialized_michi["id"])
-            serialized_michi["tags"] = list(michi_tag_list)
-            response.append(serialized_michi)
 
         if format == "api":
             return render_template("api_show.html")
         else:
+            michi_list = db_manager.michi_list()
+            response = [michi.serialize() for michi in michi_list]
             return success_response(data=response)
     except Exception as error:
         return error_response(error)
@@ -52,8 +47,6 @@ def michi(id):
     try:
         michi = db_manager.get_michi(id)
         serialized_michi = michi.serialize()
-        michi_tag_list = db_manager.michi_tags_list(serialized_michi["id"])
-        serialized_michi["tags"] = list(michi_tag_list)
         return success_response(data=serialized_michi)
     except Exception as error:
         return error_response(error)
@@ -65,8 +58,7 @@ def michi(id):
 def doggos():
     try:
         doggo_list = db_manager.doggo_list()
-        response = success_response(data=[doggo.serialize() for doggo in doggo_list])
-        return response
+        return success_response(data=[doggo.serialize() for doggo in doggo_list])
     except Exception as error:
         return error_response(error)
 
