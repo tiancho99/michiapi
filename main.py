@@ -21,7 +21,8 @@ def home():
 
 @app.route("/documentation")
 def documentation():
-    return render_template("documentation.html")
+    endpoint = os.environ.get("MICHIAPI_ENDPOINT")
+    return render_template("documentation.html", endpoint=endpoint)
 
 @app.route("/about")
 def about():

@@ -6,7 +6,6 @@ from app.utils.response import success_response, error_response
 
 import os
 
-
 @michi_api.route("/")
 @limiter.limit("100/hour", override_defaults=False)
 def api():
