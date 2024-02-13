@@ -37,7 +37,10 @@
 
     <div class="endponints ms-3 white">
         <h4 class="m-3">Location</h4>
-            <p class="m-3">The MichiAPI is available at {{ endpoint }} . Responses are sent as JSON. 
+            <p class="m-3">The MichiAPI is available at {{ endpoint }} . Responses are sent as JSON.</p> 
+        <h4 class="m-3">API Endpoints</h4>
+        <h4 class="m-3">Limits</h4>
+            <p class="m-3">The MichiAPI is limeted up to 100 requests per hour</p> 
         <h4 class="m-3">API Endpoints</h4>
         <ul>
             <li><a href="{{ url_for('michiapi.api', format='json') }}">/</a> - Get API endpoints linst. you can pass format=json as parameter to get list as JSON</li>
