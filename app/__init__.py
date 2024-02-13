@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_bootstrap import Bootstrap5
+from flask_cors import CORS
 
 from .api import michi_api, limiter
 from .db_manager.models import db
@@ -18,5 +19,6 @@ def create_app():
 
     limiter.init_app(app)
     bootstrap = Bootstrap5(app)
+    CORS(app)
 
     return app
